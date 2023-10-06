@@ -1,10 +1,5 @@
-
-текст = input("Введіть текст: ")
-зарезервовані_слова = input("Введіть список зарезервованих слів (через пробіл): ").split()
-слова = текст.split()
-for індекс, слово in enumerate(слова):
-    if слово.lower() in зарезервовані_слова:
-        слова[індекс] = слово.upper()
-змінений_текст = ' '.join(слова)
-print("Змінений текст:")
-print(змінений_текст)
+text = input("Введіть текст: ")
+sentences = text.split('.') or text.split('?') or text.split('!')
+sentences = [sentence.strip() for sentence in sentences if sentence.strip()]
+num_sentences = len(sentences)
+print(f"Кількість речень у введеному тексті: {num_sentences}")
